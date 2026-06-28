@@ -1,0 +1,96 @@
+<!DOCTYPE html><html lang="ko"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/><meta name="description" content="Confirm your attendance by entering your name, age, gender, nationality, and Instagram ID.">
+<meta property="og:description" content="Fill in your details and your attendance is registered automatically.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://misiso.com" crossorigin/>
+<meta property="og:title" content="popup meeting"/>
+<title>popup meeting</title>
+<meta property="og:image" content="https://wannabe03.github.io/Participant/og-image-00ezyu2k.png"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://wannabe03.github.io/Participant/og-image-00ezyu2k.png"/>
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2032%2032'%3E%3Crect%20width%3D'32'%20height%3D'32'%20rx%3D'6'%20fill%3D'%236366f1'%2F%3E%3Ctext%20x%3D'16'%20y%3D'22'%20text-anchor%3D'middle'%20font-size%3D'18'%20fill%3D'white'%20font-family%3D'sans-serif'%3Ep%3C%2Ftext%3E%3C%2Fsvg%3E"/>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Pretendard', sans-serif; }
+.wrap {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  background: linear-gradient(135deg, #fdf2f8 0%, #fce7f3 100%);
+}
+.card {
+  width: 100%;
+  max-width: 440px;
+  background: #fff;
+  border-radius: 1.25rem;
+  padding: 2rem 1.75rem;
+  box-shadow: 0 10px 40px rgba(236, 72, 153, .12);
+}
+h1 { font-size: 1.5rem; color: #1f2937; margin-bottom: .4rem; }
+.sub { color: #6b7280; font-size: .925rem; margin-bottom: 1.5rem; line-height: 1.5; }
+.field { display: block; margin-bottom: 1.1rem; }
+.field span { display: block; font-size: .85rem; font-weight: 600; color: #374151; margin-bottom: .4rem; }
+.field input,
+.field select {
+  width: 100%;
+  padding: .8rem .9rem;
+  border: 1.5px solid #f3d4e4;
+  border-radius: .7rem;
+  font-size: 1rem;
+  color: #1f2937;
+  background: #fff;
+  transition: border-color .15s, box-shadow .15s;
+  outline: none;
+}
+.field select { cursor: pointer; }
+.field select.placeholder { color: #9ca3af; }
+.field input:focus,
+.field select:focus { border-color: #ec4899; box-shadow: 0 0 0 3px rgba(236, 72, 153, .15); }
+.field input::placeholder { color: #c4b5c9; }
+.err { color: #dc2626; font-size: .875rem; margin-bottom: .9rem; }
+.btn {
+  width: 100%;
+  padding: .9rem;
+  border: none;
+  border-radius: .7rem;
+  background: #ec4899;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background .15s, transform .1s;
+}
+.btn:hover:not(:disabled) { background: #db2777; }
+.btn:active:not(:disabled) { transform: scale(.98); }
+.btn:disabled { opacity: .6; cursor: not-allowed; }
+.btn.ghost { background: #fff; color: #ec4899; border: 1.5px solid #f3d4e4; margin-top: 1rem; }
+.btn.ghost:hover:not(:disabled) { background: #fdf2f8; }
+.done-card { text-align: center; }
+.check {
+  width: 64px; height: 64px;
+  margin: 0 auto 1.2rem;
+  border-radius: 50%;
+  background: #ec4899;
+  color: #fff;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.done-card h2 { color: #1f2937; margin-bottom: .5rem; }
+</style>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<script>if(window.Babel)Babel.disableScriptTags=true;</script>
+</head><body><div id="root"></div>
+<rect width='32' height='32' rx='6' fill='%23ec4899'/><text x='16' y='22' text-anchor='middle' font-size='18' fill='white' font-family='sans-serif'>A</text></svg>"><script type="module">
+var __np_strip_imports=function(){return{visitor:{ImportDeclaration:function(path){var src=path.node.source.value;if(src.indexOf("./")===0||src.indexOf("../")===0)path.remove();},ExportDefaultDeclaration:function(path){var decl=path.node.declaration;if(decl.type==="FunctionDeclaration"||decl.type==="ClassDeclaration"){path.replaceWith(decl);}else{path.replaceWith({type:"VariableDeclaration",kind:"var",declarations:[{type:"VariableDeclarator",id:{type:"Identifier",name:"_default"},init:decl}]});}},ExportNamedDeclaration:function(path){if(path.node.declaration){path.replaceWith(path.node.declaration);}else{path.remove();}},ExportAllDeclaration:function(path){path.remove();}}};};
+var __np_dedupe_top_consts=function(){var _s={};return{visitor:{VariableDeclaration:function(p){if(p.parent.type!=="Program")return;if(p.node.kind!=="const"&&p.node.kind!=="let")return;var kept=[];for(var i=0;i<p.node.declarations.length;i++){var d=p.node.declarations[i];var n=d.id&&d.id.type==="Identifier"?d.id.name:null;if(n&&_s[n]){}else{if(n)_s[n]=true;kept.push(d);}}if(kept.length===0){p.remove();}else{p.node.declarations=kept;}}}}};
+var __np_jsx_decode=function(){function _d(v){v=v.replace(/\\u\{([0-9a-fA-F]+)\}/g,function(_,h){return String.fromCodePoint(parseInt(h,16));});v=v.replace(/\\u([0-9a-fA-F]{4})/g,function(_,h){return String.fromCharCode(parseInt(h,16));});return v;}return{visitor:{JSXText:function(p){p.node.value=_d(p.node.value);},StringLiteral:function(p){if(!p.parent||p.parent.type!=="JSXAttribute")return;p.node.value=_d(p.node.value);}}}};
+var __code="import React from 'https://esm.sh/react';\nimport ReactDOM from 'https://esm.sh/react-dom/client';\nimport { useState } from 'https://esm.sh/react';\n\nconst DB_ID = '_NP_DB_2E16CF5E';\nconst API_PAGES = '/api/notion/pages';\n\nconst AGE_OPTIONS = Array.from({ length: 67 }, (_, i) => i + 14); // 14 - 80\nconst GENDER_OPTIONS = ['Male', 'Female', 'Non-binary', 'Prefer not to say'];\nconst NATIONALITY_OPTIONS = [\n  'South Korea', 'United States', 'Canada', 'United Kingdom', 'Australia',\n  'New Zealand', 'Ireland', 'France', 'Germany', 'Spain', 'Italy',\n  'Netherlands', 'Sweden', 'Norway', 'Poland', 'Russia', 'Ukraine',\n  'China', 'Japan', 'Taiwan', 'Hong Kong', 'Vietnam', 'Thailand',\n  'Philippines', 'Indonesia', 'Malaysia', 'Singapore', 'India',\n  'Brazil', 'Mexico', 'Argentina', 'Turkey', 'Egypt', 'Saudi Arabia',\n  'United Arab Emirates', 'South Africa', 'Nigeria', 'Kenya', 'Other',\n];\n\nconst EMPTY_FORM = { name: '', age: '', gender: '', nationality: '', instagram: '' };\n\nfunction selectClass(value) {\n  return value ? 'select-input' : 'select-input placeholder';\n}\n\nfunction buildPayload(form) {\n  const handle = form.instagram.trim().replace(/^@+/, '');\n  return {\n    parent: { database_id: DB_ID },\n    properties: {\n      이름: { title: [{ text: { content: form.name.trim() } }] },\n      나이: { number: Number(form.age) },\n      성별: { select: { name: form.gender } },\n      국적: { rich_text: [{ text: { content: form.nationality } }] },\n      인스타: { rich_text: handle ? [{ text: { content: '@' + handle } }] : [] },\n      제출시각: { date: { start: new Date().toISOString() } },\n    },\n  };\n}\n\nfunction AttendeeForm() {\n  const [form, setForm] = useState(EMPTY_FORM);\n  const [submitting, setSubmitting] = useState(false);\n  const [done, setDone] = useState(false);\n  const [error, setError] = useState('');\n\n  const handleChange = (key) => (e) => {\n    setForm((prev) => ({ ...prev, [key]: e.target.value }));\n  };\n\n  const handleSubmit = async () => {\n    setError('');\n    if (!form.name.trim()) { setError('Please enter your name.'); return; }\n    if (!form.age) { setError('Please select your age.'); return; }\n    if (!form.gender) { setError('Please select your gender.'); return; }\n    if (!form.nationality) { setError('Please select your nationality.'); return; }\n\n    setSubmitting(true);\n    try {\n      const res = await fetch(API_PAGES, {\n        method: 'POST',\n        headers: { 'Content-Type': 'application/json' },\n        body: JSON.stringify(buildPayload(form)),\n      });\n      const data = await res.json().catch(() => ({}));\n      if (!res.ok) {\n        const detail = data && data.message ? data.message : 'HTTP ' + res.status;\n        throw new Error(detail);\n      }\n      setDone(true);\n    } catch (err) {\n      console.error('[Attendee submit] failed:', err.message);\n      setError('Submission failed: ' + err.message);\n    } finally {\n      setSubmitting(false);\n    }\n  };\n\n  const handleReset = () => {\n    setForm(EMPTY_FORM);\n    setDone(false);\n    setError('');\n  };\n\n  if (done) {\n    return (\n      <div className=\"wrap\">\n        <div className=\"card done-card\">\n          <div className=\"check\">✓</div>\n          <h2>You're on the list!</h2>\n          <p className=\"sub\">Thanks for confirming your attendance 🙌</p>\n          <button className=\"btn ghost\" onClick={handleReset}>Add another person</button>\n        </div>\n      </div>\n    );\n  }\n\n  return (\n    <div className=\"wrap\">\n      <div className=\"card\">\n        <h1>Attendance Check</h1>\n        <p className=\"sub\">Fill in the details below to confirm your attendance.</p>\n\n        <label className=\"field\">\n          <span>Name</span>\n          <input value={form.name} onChange={handleChange('name')} placeholder=\"Hong Gildong\" />\n        </label>\n\n        <label className=\"field\">\n          <span>Age</span>\n          <select className={selectClass(form.age)} value={form.age} onChange={handleChange('age')}>\n            <option value=\"\">Select your age</option>\n            {AGE_OPTIONS.map((age) => (\n              <option key={age} value={age}>{age}</option>\n            ))}\n          </select>\n        </label>\n\n        <label className=\"field\">\n          <span>Gender</span>\n          <select className={selectClass(form.gender)} value={form.gender} onChange={handleChange('gender')}>\n            <option value=\"\">Select your gender</option>\n            {GENDER_OPTIONS.map((g) => (\n              <option key={g} value={g}>{g}</option>\n            ))}\n          </select>\n        </label>\n\n        <label className=\"field\">\n          <span>Nationality</span>\n          <select className={selectClass(form.nationality)} value={form.nationality} onChange={handleChange('nationality')}>\n            <option value=\"\">Select your nationality</option>\n            {NATIONALITY_OPTIONS.map((c) => (\n              <option key={c} value={c}>{c}</option>\n            ))}\n          </select>\n        </label>\n\n        <label className=\"field\">\n          <span>Instagram ID</span>\n          <input value={form.instagram} onChange={handleChange('instagram')} placeholder=\"@username\" />\n        </label>\n\n        {error && <p className=\"err\">{error}</p>}\n\n        <button className=\"btn\" onClick={handleSubmit} disabled={submitting}>\n          {submitting ? 'Submitting...' : 'Confirm attendance'}\n        </button>\n      </div>\n    </div>\n  );\n}\n\nReactDOM.createRoot(document.getElementById('root')).render(<AttendeeForm />);";
+try{var __result=Babel.transform(__code,{filename:"app.tsx",presets:["react","typescript"],plugins:[__np_strip_imports,__np_dedupe_top_consts,__np_jsx_decode],generatorOpts:{jsescOption:{minimal:true}},sourceType:"module"});try{var __s=document.createElement("script");__s.type="module";__s.textContent=__result.code;document.head.appendChild(__s);}catch(runErr){console.error("[user code runtime] "+(runErr.message||runErr)+"\n"+(runErr.stack||""));}}catch(transErr){var lm=(transErr.message||"").match(/\((\d+):(\d+)\)/);var ln=lm?parseInt(lm[1],10):0;var cx="";if(ln>0){var ls=__code.split("\n");var s=Math.max(0,ln-3),e=Math.min(ls.length,ln+2);cx="\n--- 사용자 코드 주변 ---\n"+ls.slice(s,e).map(function(l,i){return (s+i+1)+": "+l;}).join("\n");}console.error("[Babel transform 실패] "+(transErr.message||transErr)+cx);}
+</script>
+</body></html>
